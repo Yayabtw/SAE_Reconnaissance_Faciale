@@ -1,8 +1,5 @@
 # SAÉ: Modélisation mathématique<br>Reconnaissance faciale en temps réel
 
-<img src="moi.png" width="400" height="auto" />
-
-
 ## Description du projet
 
 Le but de cette SAÉ est de construire un système de reconnaissance faciale qui fonctionne en temps réel.
@@ -11,11 +8,26 @@ Le système utilise la caméra de votre PC (ou alors une caméra externe) pour c
 
 Par la suite, on entraînera un **algorithme de classification** permettant de prédire le nom de la personne qui se trouve devant la caméra en fonction de son visage.
 
-## Implémentation
+## Prérequis
 
-Les 2 notebooks `1_dataset.ipynb`et `2_ago.ipynb` permettent d'implémenter un tel **système de reconnaissance faciale en temps réel** basé sur l'algorithme des **$k$ plus proches voisins ($k$-NN)**.
+- Python 3.8+
+- Jupyter Notebook
+- Bibliothèques Python : NumPy, Pandas, Scikit-learn, TensorFlow/Keras
 
-Le premier notebook implémente la création du **dataset** et le second code l'algorithme **$k$-NN** et son intégration dans un système de reconnaissance faciale en temps réel.
+## Algorithmes et Modèles
+
+### Régression Logistique
+
+La régression logistique est un modèle de classification linéaire simple mais efficace, souvent utilisé comme point de départ pour les problèmes de classification. Dans notre contexte, il sert à distinguer si une image contient ou non un visage spécifique. Ce modèle est particulièrement utile pour comprendre les bases de la classification binaire et pour établir une ligne de base de performance sur notre ensemble de données.
+### Arbre de Décision
+
+Les arbres de décision classifient les données en apprenant une série de questions à poser sur les caractéristiques des données jusqu'à ce qu'une décision puisse être prise. Ils sont visuellement intuitifs et faciles à interpréter, mais peuvent souffrir de surapprentissage si les arbres deviennent trop complexes. Dans notre projet, les arbres de décision sont utilisés pour identifier les visages en fonction des caractéristiques extraites des images.
+### Réseau de Neurones (Dense)
+
+Les réseaux de neurones denses, ou réseaux pleinement connectés, sont formés de couches où chaque neurone est connecté à tous les neurones de la couche précédente et suivante. Ces modèles sont capables de capturer des relations complexes entre les entrées grâce à leur structure profonde et à leur capacité d'apprentissage. Dans la reconnaissance faciale, ils apprennent à reconnaître des motifs complexes dans les images de visages, bien qu'ils puissent nécessiter de grandes quantités de données pour bien performer.
+### Réseau de Neurones Convolutifs (CNN)
+
+Les CNN représentent l'état de l'art pour la reconnaissance d'images. Grâce à leur architecture unique, capable d'extraire progressivement des caractéristiques de haut niveau à partir de données brutes, ils sont particulièrement adaptés à la reconnaissance faciale. Les couches convolutives filtrent les images pour en extraire des caractéristiques telles que les bords et les formes, tandis que les couches de pooling réduisent la dimensionnalité. Nous utilisons des CNN pour leur capacité à apprendre des caractéristiques faciales discriminantes, conduisant à une précision élevée dans la reconnaissance des individus.
 
 ## Consignes
 
